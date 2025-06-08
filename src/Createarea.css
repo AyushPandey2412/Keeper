@@ -1,0 +1,361 @@
+/* CreateArea Component Animations */
+
+/* Expansion Animations */
+@keyframes expandPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cardExpand {
+  0% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 12px;
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+    border-radius: 16px;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 16px;
+  }
+}
+
+/* Content Slide Animations */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Success Animations */
+@keyframes successFloat {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px) scale(1.1);
+  }
+  70% {
+    transform: translateX(-50%) translateY(-5px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes successBurst {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes successGlow {
+  0% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 
+      0 25px 50px -12px rgba(34, 197, 94, 0.3),
+      0 0 0 4px rgba(34, 197, 94, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Creating State Animation */
+@keyframes creating {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Floating Particles */
+@keyframes floatingParticle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-80px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
+
+/* Content Area Focus Effect */
+@keyframes contentFocus {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+}
+
+/* Button Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Utility Classes */
+.animate-expandPulse {
+  animation: expandPulse 0.6s ease-out;
+}
+
+.animate-cardExpand {
+  animation: cardExpand 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-successFloat {
+  animation: successFloat 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-successBurst {
+  animation: successBurst 0.8s ease-out;
+}
+
+.animate-successGlow {
+  animation: successGlow 1s ease-in-out;
+}
+
+.animate-creating {
+  animation: creating 1.5s ease-in-out infinite;
+}
+
+.animate-floatingParticle {
+  animation: floatingParticle 2s ease-out forwards;
+}
+
+/* Enhanced Hover Effects */
+.create-area-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.create-area-container:hover {
+  transform: translateY(-2px);
+}
+
+.create-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.create-card:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
+/* Content Editable Enhancements */
+.content-editable {
+  transition: all 0.3s ease-out;
+}
+
+.content-editable:focus {
+  animation: contentFocus 0.3s ease-out;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.content-editable:not(:focus):hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Button Enhancements */
+.create-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.create-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  transform: translate(-50%, -50%);
+}
+
+.create-button:active:before {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+}
+
+/* Loading Spinner */
+.create-spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 2px solid white;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Scale Utility Classes */
+.scale-102 {
+  transform: scale(1.02);
+}
+
+.scale-105 {
+  transform: scale(1.05);
+}
+
+/* Shadow Utility Classes */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .animate-cardExpand {
+    animation: cardExpand 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .create-card:hover {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  
+  .animate-floatingParticle {
+    display: none; /* Hide particles on mobile for performance */
+  }
+}
+
+/* Dark Mode Specific Animations */
+.dark .create-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .create-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+.dark .content-editable:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Performance Optimizations */
+.create-area-container {
+  will-change: transform, opacity;
+}
+
+.create-card {
+  will-change: transform, box-shadow;
+}
+
+.content-editable {
+  will-change: background-color, box-shadow;
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-expandPulse,
+  .animate-cardExpand,
+  .animate-slideDown,
+  .animate-slideInUp,
+  .animate-successFloat,
+  .animate-successBurst,
+  .animate-successGlow,
+  .animate-creating,
+  .animate-floatingParticle {
+    animation: none;
+  }
+  
+  .create-area-container,
+  .create-card,
+  .content-editable,
+  .create-button {
+    transition: none;
+  }
+}
